@@ -29,7 +29,19 @@ contract TieredProfitSplitter {
 
         // @TODO: Repeat the previous steps for `employee_two` and `employee_three`
         // Your code here!
+        
+        
+        amount = points * 60; 
+        total += amount;
+        employee_one.transfer(amount);
 
+        amount = points * 25; 
+        total += amount;
+        employee_two.transfer(amount);
+
+        amount = points * 15; 
+        total += amount;
+        employee_three.transfer(amount);
         employee_one.transfer(msg.value - total); // ceo gets the remaining wei
     }
 
